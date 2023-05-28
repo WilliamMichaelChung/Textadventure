@@ -8,10 +8,10 @@
 import java.util.Scanner;//imports a scanner so the program can read what the user types
 public class game
 {
-    // instance variables - replace the example below with your own
     int item1 = 1;
     int item2 = 2;
     int item3 = 3;
+    int[] numberOfMoves = {5};//The amount of moves the player is given. If used up they lose
     /**
      * Constructor for objects of class game
      */
@@ -34,16 +34,29 @@ public class game
         String gamestart = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
         gamestart = gamestart.toLowerCase();//turns whatever is typed into a lowercase
         boolean startgame;
-        while (gamestart.equals("y")){
+         
+        if (gamestart.equals("y")){
             startgame = true;
-            System.out.print("Press Y to start!");
-        }
-        startgame = false;
+            while (startgame = true){
+                System.out.print("Starting game");
+            }
 
-        if(startgame == true){
-            System.out.print("Welcome");
+        } else{
+            while (startgame = false){
+                System.out.print("Press Y to start!");
+            }
         }
+
+        //while (gamestart.equals("y")){
+
+        //startgame = false;
+        //System.out.print("Press Y to start!");
+
         /*
+        if(startgame == true){
+        System.out.print("Welcome");
+        }
+        /**
         if (gamestart.equals("y")){
         startgame = true;
         }
@@ -68,16 +81,26 @@ public class game
         }
          */
     }
-
-    int readNum(){
-        Scanner keyboard = new Scanner(System.in);
-        String prompt = "give me a number";
-        System.out.println(prompt);
-        while(!keyboard.hasNextInt()){
-            keyboard.nextLine();
-        System.out.print("No "+prompt);
-        }
-        return keyboard.nextInt();
+    /**
+    char readgamestart(){
+    Scanner keyboard = new Scanner(System.in);
+    String prompt = "give me a number";
+    System.out.println(prompt);
+    while(!keyboard.hasNextInt()){
+    keyboard.nextLine();
+    System.out.print("No "+prompt);
     }
-}
+     */
+    /**int readNum(){
+    Scanner keyboard = new Scanner(System.in);
+    String prompt = "give me a number";
+    System.out.println(prompt);
+    while(!keyboard.hasNextInt()){
+    keyboard.nextLine();
+    System.out.print("No "+prompt);
+    }
+    return keyboard.nextInt();
+    }
+     */
 
+}
