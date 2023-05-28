@@ -2,32 +2,82 @@
 /**
  * Write a description of class game here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (William Chung)
+ * @version (16/5/23)
  */
+import java.util.Scanner;//imports a scanner so the program can read what the user types
 public class game
 {
     // instance variables - replace the example below with your own
-    private int x;
-
+    int item1 = 1;
+    int item2 = 2;
+    int item3 = 3;
     /**
      * Constructor for objects of class game
      */
     public game()
     {
-        // initialise instance variables
-        x = 0;
+        //this part is instructions on how to play the game 
+        String line1 = "In this game there are 8 different rooms you must navigate through." ; 
+        String line2 = "Your objective is to collect 3 items then enter a secret room to win! "; 
+        String line3 = "To navigate through the rooms you can move north, east, south, west.";
+        String line4 = "To move north type N in the responses box"; 
+        String line5 = "To move east type E in the responses box"; 
+        String line6 = "To move south type S in the responses box"; 
+        String line7 = "To move west type W in the responses box"; 
+        String line8 = "To search and a room and pick up items type F in the responses box"; 
+        String line9 = "Type Y to start!"; 
+        String Intro = line1 + "\r\n" + line2 + "\r\n" + line3 + "\r\n" + line4 + "\r\n" + line5 + "\r\n" + line6 + "\r\n" + line7 + "\r\n" + "\r\n"+ line8 + "\r\n"+ line9;//combines all the strings into 1 with each completed sentence going down a line
+        System.out.println(Intro);//the system prints out the combined strings(intro)
+
+        Scanner inputStream = new Scanner(System.in);//creates a new scanner
+        String gamestart = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
+        gamestart = gamestart.toLowerCase();//turns whatever is typed into a lowercase
+        boolean startgame;
+        while (gamestart.equals("y")){
+            startgame = true;
+            System.out.print("Press Y to start!");
+        }
+        startgame = false;
+
+        if(startgame == true){
+            System.out.print("Welcome");
+        }
+        /*
+        if (gamestart.equals("y")){
+        startgame = true;
+        }
+        else{
+        startgame = false;
+        }
+        if(startgame == true){
+        System.out.print("Welcome");
+        }
+         */
+        /**
+        Scanner inputStream = new Scanner(System.in);
+        inputStream.nextLine();
+        //String input = inputStream.nextLine();
+        //String startgame = input.toLowerCase();
+        boolean  gameintro;
+        if(inputStream == "gameintro"){
+        gameintro = true;
+        }
+        else{
+        gameintro = false;
+        }
+         */
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    int readNum(){
+        Scanner keyboard = new Scanner(System.in);
+        String prompt = "give me a number";
+        System.out.println(prompt);
+        while(!keyboard.hasNextInt()){
+            keyboard.nextLine();
+        System.out.print("No "+prompt);
+        }
+        return keyboard.nextInt();
     }
 }
+
