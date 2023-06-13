@@ -28,15 +28,15 @@ public class game
         String line8 = "To search and a room and pick up items type F in the responses box"; 
         String line9 = "Type Y to start!"; 
         String line10 = "There will also be some trapped rooms. Where if you enter them they'll kill you instantly.";
-        String Intro = line1 + "\r\n" + line10 + "/r/n" + line2 + "\r\n" + line3 + "\r\n" + line4 + "\r\n" + line5 + "\r\n" + line6 + "\r\n" + line7 + "\r\n" + "\r\n"+ line8 + "\r\n"+ line9;//combines all the strings into 1 with each completed sentence going down a line
+        String line11 = "To move up type U in the responses box";
+        String line12 = "To move down type D in the responses box";
+        String Intro = line1 + "\r\n" + line11 + "\r\n" + line12 + "\r\n" + line10 + "\r\n" + line2 + "\r\n" + line3 + "\r\n" + line4 + "\r\n" + line5 + "\r\n" + line6 + "\r\n" + line7 + "\r\n" + "\r\n"+ line8 + "\r\n"+ line9;//combines all the strings into 1 with each completed sentence going down a line
         System.out.println(Intro);//the system prints out the combined strings(intro)
 
         Scanner inputStream = new Scanner(System.in);//creates a new scanner
         String gamestart = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
         gamestart = gamestart.toLowerCase();//turns whatever is typed into a lowercase
         boolean startgame;
-
-        char letter = 'y';
 
         if (gamestart.equals("y")){
             startgame = true;
@@ -85,7 +85,7 @@ public class game
         }
          */
     }
-
+    /**
     char letter(){
         while (startgame = true){
             System.out.print("starting game!" + "\r\n" + "Welcome");
@@ -93,6 +93,7 @@ public class game
         }
 
     }
+    */
     int x = 0; 
     /**
     char readgamestart(){
@@ -115,6 +116,6 @@ public class game
         }
         return keyboard.nextInt();
     }
-}
+
 
 }

@@ -3,4 +3,7 @@ comment0.target=game
 comment1.params=
 comment1.target=game()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ game\r\n
-numComments=2
+comment2.params=
+comment2.target=int\ readNum()
+comment2.text=\r\n\ \ \ \ char\ readgamestart(){\r\n\ \ \ \ Scanner\ keyboard\ \=\ new\ Scanner(System.in);\r\n\ \ \ \ String\ prompt\ \=\ "give\ me\ a\ number";\r\n\ \ \ \ System.out.println(prompt);\r\n\ \ \ \ while(\!keyboard.charAt(1)){\r\n\ \ \ \ keyboard.nextLine();\r\n\ \ \ \ System.out.print("No\ "+prompt);\r\n\ \ \ \ }\r\n
+numComments=3
