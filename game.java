@@ -12,6 +12,7 @@ public class game
     int item2 = 2;
     int item3 = 3;
     int[] numberOfMoves = {5};//The amount of moves the player is given. If used up they lose
+
     /**
      * Constructor for objects of class game
      */
@@ -37,19 +38,29 @@ public class game
         String gamestart = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
         gamestart = gamestart.toLowerCase();//turns whatever is typed into a lowercase
         boolean startgame;
-
-        if (gamestart.equals("y")){
+        for (char letter = 'Y';;){
             startgame = true;
             while (startgame = true){
                 System.out.print("starting game!" + "\r\n" + "Welcome");
                 break;
             }
-
-        } else{
-            while (startgame = false){
-                System.out.print("Press Y to start!");
-            }
+            
         }
+        return System.out.print("Press Y to start!");
+
+        /**
+        if (gamestart.equals("y")){
+        startgame = true;
+        while (startgame = true){
+        System.out.print("starting game!" + "\r\n" + "Welcome");
+        break;
+        }
+        } else{
+        while (startgame = false){
+        System.out.print("Press Y to start!");
+        }
+        }
+         */
         ///.charAt(1);
         //while (gamestart.equals("y")){
 
@@ -87,13 +98,12 @@ public class game
     }
     /**
     char letter(){
-        while (startgame = true){
-            System.out.print("starting game!" + "\r\n" + "Welcome");
-            break;
-        }
-
+    while (startgame = true){
+    System.out.print("starting game!" + "\r\n" + "Welcome");
+    break;
     }
-    */
+    }
+     */
     int x = 0; 
     /**
     char readgamestart(){
@@ -116,6 +126,5 @@ public class game
         }
         return keyboard.nextInt();
     }
-
 
 }
