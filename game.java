@@ -38,29 +38,28 @@ public class game
         String gamestart = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
         gamestart = gamestart.toLowerCase();//turns whatever is typed into a lowercase
         boolean startgame;
-        for (char letter = 'Y';;){
+        
             startgame = true;
             while (startgame = true){
                 System.out.print("starting game!" + "\r\n" + "Welcome");
                 break;
             }
-            
         }
-        return System.out.print("Press Y to start!");
+        //System.out.print("Press Y to start!");
 
-        /**
+        /*
         if (gamestart.equals("y")){
         startgame = true;
-        while (startgame = true){
+        while (gamestart = true){
         System.out.print("starting game!" + "\r\n" + "Welcome");
         break;
         }
         } else{
-        while (startgame = false){
+        while (gamestart = false){
         System.out.print("Press Y to start!");
         }
         }
-         */
+
         ///.charAt(1);
         //while (gamestart.equals("y")){
 
@@ -82,7 +81,7 @@ public class game
         System.out.print("Welcome");
         }
          */
-        /**
+        /*
         Scanner inputStream = new Scanner(System.in);
         inputStream.nextLine();
         //String input = inputStream.nextLine();
@@ -95,36 +94,38 @@ public class game
         gameintro = false;
         }
          */
-    }
-    /**
-    char letter(){
-    while (startgame = true){
-    System.out.print("starting game!" + "\r\n" + "Welcome");
-    break;
-    }
-    }
-     */
-    int x = 0; 
-    /**
-    char readgamestart(){
-    Scanner keyboard = new Scanner(System.in);
-    String prompt = "give me a number";
-    System.out.println(prompt);
-    while(!keyboard.charAt(1)){
-    keyboard.nextLine();
-    System.out.print("No "+prompt);
-    }
-     */
+    
 
-    int readNum(){
+    boolean readgamestart(){
+        Scanner keyboard = new Scanner(System.in);
+        String prompt = "Press Y to start!";
+        System.out.println(prompt);
+        while(!keyboard.hasNextLine()){
+            keyboard.nextLine();
+            System.out.print("No "+prompt);
+        }
+        return keyboard.hasNextBoolean();
+
+        /**
+        char letter(){
+        while (startgame = true){
+        System.out.print("starting game!" + "\r\n" + "Welcome");
+        break;
+        }
+        }
+         */
+
+        /*
+        int readNum(){
         Scanner keyboard = new Scanner(System.in);
         String prompt = "give me a number";
         System.out.println(prompt);
         while(!keyboard.hasNextInt()){
-            keyboard.nextLine();
-            System.out.print("No "+prompt);
+        keyboard.nextLine();
+        System.out.print("No "+prompt);
         }
         return keyboard.nextInt();
+        }
+         */
     }
-
 }
