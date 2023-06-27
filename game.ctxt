@@ -3,7 +3,4 @@ comment0.target=game
 comment1.params=
 comment1.target=game()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ game\r\n
-comment2.params=
-comment2.target=boolean\ readgamestart()
-comment2.text=\r\n\ \ \ \ \ \ \ \ Scanner\ inputStream\ \=\ new\ Scanner(System.in);\r\n\ \ \ \ \ \ \ \ inputStream.nextLine();\r\n\ \ \ \ \ \ \ \ //String\ input\ \=\ inputStream.nextLine();\r\n\ \ \ \ \ \ \ \ //String\ startgame\ \=\ input.toLowerCase();\r\n\ \ \ \ \ \ \ \ boolean\ \ gameintro;\r\n\ \ \ \ \ \ \ \ if(inputStream\ \=\=\ "gameintro"){\r\n\ \ \ \ \ \ \ \ gameintro\ \=\ true;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else{\r\n\ \ \ \ \ \ \ \ gameintro\ \=\ false;\r\n\ \ \ \ \ \ \ \ }\r\n
-numComments=3
+numComments=2

@@ -38,15 +38,19 @@ public class game
         String gamestart = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
         gamestart = gamestart.toLowerCase();//turns whatever is typed into a lowercase
         boolean startgame;
-        
-            startgame = true;
-            while (startgame = true){
-                System.out.print("starting game!" + "\r\n" + "Welcome");
-                break;
+           
+        if (gamestart == ("y")){
+            System.out.print("starting game!" + "\r\n" + "Welcome");
+        }
+        else{
+            while (gamestart != ("y")){
+                System.out.print("Press Y to start!");
+                if(gamestart.equals("y")){
+                }
             }
         }
-        //System.out.print("Press Y to start!");
 
+        //System.out.print("Press Y to start!");
         /*
         if (gamestart.equals("y")){
         startgame = true;
@@ -94,15 +98,14 @@ public class game
         gameintro = false;
         }
          */
-    
-
-    boolean readgamestart(){
+        /**
+        boolean readgamestart(){
         Scanner keyboard = new Scanner(System.in);
         String prompt = "Press Y to start!";
         System.out.println(prompt);
         while(!keyboard.hasNextLine()){
-            keyboard.nextLine();
-            System.out.print("No "+prompt);
+        keyboard.nextLine();
+        System.out.print(prompt);
         }
         return keyboard.hasNextBoolean();
 
@@ -127,5 +130,6 @@ public class game
         return keyboard.nextInt();
         }
          */
+
     }
 }
