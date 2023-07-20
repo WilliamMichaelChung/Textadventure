@@ -20,7 +20,7 @@ public class game
     boolean room7 = false;
     boolean room8 = false;
     boolean exit = false;
-    int[] numberOfMoves = {15};//The amount of moves the player is given. If used up they lose
+    int numberOfMoves = 15;//The amount of moves the player is given. If used up they lose
     boolean game;
     boolean startgame;
     /**
@@ -48,17 +48,63 @@ public class game
         String gameKeyboard = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
         gameKeyboard = gameKeyboard.toLowerCase();//turns whatever is typed into a lowercase
 
-        if (gameKeyboard.equals ("y")){
-            startgame = true;
-            if (startgame = true){
-                System.out.print("starting game!" + "\r\n" + "Welcome");
+        boolean intro = true;
+
+        
+            Scanner keyboard = new Scanner(System.in);
+            System.out.print("Press Y to start");
+            while(!gameKeyboard.equals ("Y")){
+                keyboard.nextLine();
+                System.out.print("Press Y to start");
             }
-            game = true;
-            startgame = false;
+            return starting;
+        String starting = System.out.println("Starting game!" + "\r\n" + "Welcome");
+
+        
+        
+        if (gameKeyboard == ("y")){
+            System.out.print("Starting game!" + "\r\n" + "Welcome");
         }
-        if(!gameKeyboard.equals ("y")){
-            System.out.print("Type Y to start!");
-        }    
+        else{
+            System.out.print("Press Y to start!");
+        }
+        /**
+        while (intro == true){
+        if(!(gameKeyboard.equals ("y"))){
+        System.out.print("Type Y to start!");
+        }else if (gameKeyboard.equals ("y")){
+        break;
+        }
+
+        }
+         */
+
+        /*
+        if(gameKeyboard.equals ("y")){
+        startgame = true;
+        if (startgame = true){
+        System.out.print("starting game!" + "\r\n" + "Welcome");
+        }
+        game = true;
+        startgame = false;
+        intro = false;
+        }
+         */
+        /**
+        while(intro == true){
+        if (gameKeyboard.equals ("y")){
+        startgame = true;
+        if (startgame = true){
+        System.out.print("starting game!" + "\r\n" + "Welcome");
+        }
+        game = true;
+        startgame = false;
+        break;
+        } else{
+        System.out.print("Type Y to start!");
+        }
+        }
+         */
         /*  
         while (gameKeyboard.equals("y")){
 
@@ -76,16 +122,8 @@ public class game
         }
         startgame = false;
          */
-        /**
-        if (gameKeyboard == ("y")){
-        System.out.print("Starting game!" + "\r\n" + "Welcome");
-        }
-        else{
-        System.out.print("Press Y to start!");
 
-        }
-         */
-
+         
         /*
         //moving throughout the game
         for (int i = 0; i < 15; i++){
@@ -169,11 +207,16 @@ public class game
         return keyboard.nextInt();
         }
          */
+        //the amount of times the player can move around the rooms before they lose
+        for(int i=0 ; i>15; i++){
+            System.out.println("Number of moves left"+ (i -= 15-i));
+        }
 
         //main game
         while (game == true){
-            //entering rooms code
+            //move numbers/the amount of times you can move between the rooms
 
+            //entering rooms code
             //moving to room 1
             if(room2 == true && gameKeyboard.equals ("s")){
                 room1 = true;
