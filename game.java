@@ -47,27 +47,20 @@ public class game
         Scanner inputStream = new Scanner(System.in);//creates a new scanner
         String gameKeyboard = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
         gameKeyboard = gameKeyboard.toLowerCase();//turns whatever is typed into a lowercase
+        boolean intro = true;      
 
-        boolean intro = true;
-
-        
-            Scanner keyboard = new Scanner(System.in);
-            System.out.print("Press Y to start");
-            while(!gameKeyboard.equals ("Y")){
-                keyboard.nextLine();
-                System.out.print("Press Y to start");
+        if (gameKeyboard.equals ("y")){
+            startgame = true;
+            if (startgame = true){
+                System.out.print("starting game!" + "\r\n" + "Welcome");
             }
-            return starting;
-        String starting = System.out.println("Starting game!" + "\r\n" + "Welcome");
+            game = true;
+            startgame = false;
+        }
+        if(!gameKeyboard.equals ("y")){
+            System.out.print("Type Y to start!");
+        }    
 
-        
-        
-        if (gameKeyboard == ("y")){
-            System.out.print("Starting game!" + "\r\n" + "Welcome");
-        }
-        else{
-            System.out.print("Press Y to start!");
-        }
         /**
         while (intro == true){
         if(!(gameKeyboard.equals ("y"))){
@@ -123,7 +116,6 @@ public class game
         startgame = false;
          */
 
-         
         /*
         //moving throughout the game
         for (int i = 0; i < 15; i++){
@@ -209,7 +201,7 @@ public class game
          */
         //the amount of times the player can move around the rooms before they lose
         for(int i=0 ; i>15; i++){
-            System.out.println("Number of moves left"+ (i -= 15-i));
+            System.out.println("Number of moves left"+ (i -= 15));
         }
 
         //main game
