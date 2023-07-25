@@ -24,6 +24,17 @@ public class game
     boolean game;
     boolean startgame;
     /**
+    boolean intro(){
+    Scanner inputStream = new Scanner(System.in);//creates a new scanner
+    String keyboard = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
+    keyboard = keyboard.toLowerCase();//turns whatever is typed into a lowercase
+    while(!keyboard.equals("y")){
+    System.out.print("Type Y to start");
+    }
+    return game = true;    
+    }
+     */
+    /**
      * Constructor for objects of class game
      */
     public game()
@@ -47,76 +58,20 @@ public class game
         Scanner inputStream = new Scanner(System.in);//creates a new scanner
         String gameKeyboard = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
         gameKeyboard = gameKeyboard.toLowerCase();//turns whatever is typed into a lowercase
-        boolean intro = true;      
 
-        if (gameKeyboard.equals ("y")){
-            startgame = true;
-            if (startgame = true){
-                System.out.print("starting game!" + "\r\n" + "Welcome");
+        boolean intro = true;
+        while (intro){
+            if(!(gameKeyboard.equals ("y"))){
+                System.out.print("Type Y to start!");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }else{
+                intro = false;
+                game = true;
+                System.out.print("Starting game");
             }
-            game = true;
-            startgame = false;
-        }
-        if(!gameKeyboard.equals ("y")){
-            System.out.print("Type Y to start!");
-        }    
-
+        }//if the user types y the intro will stop and move onto the game and if they don't it'll keep asking them to type y until they do
+        
         /**
-        while (intro == true){
-        if(!(gameKeyboard.equals ("y"))){
-        System.out.print("Type Y to start!");
-        }else if (gameKeyboard.equals ("y")){
-        break;
-        }
-
-        }
-         */
-
-        /*
-        if(gameKeyboard.equals ("y")){
-        startgame = true;
-        if (startgame = true){
-        System.out.print("starting game!" + "\r\n" + "Welcome");
-        }
-        game = true;
-        startgame = false;
-        intro = false;
-        }
-         */
-        /**
-        while(intro == true){
-        if (gameKeyboard.equals ("y")){
-        startgame = true;
-        if (startgame = true){
-        System.out.print("starting game!" + "\r\n" + "Welcome");
-        }
-        game = true;
-        startgame = false;
-        break;
-        } else{
-        System.out.print("Type Y to start!");
-        }
-        }
-         */
-        /*  
-        while (gameKeyboard.equals("y")){
-
-        if (gameKeyboard.equals("y")){
-        startgame = true;
-        System.out.print("Press Y to start!");
-        while (startgame = true){
-        System.out.print("Starting game");
-        }
-
-        } else{
-        while (startgame = false){
-        System.out.print("Press Y to start!");
-        }
-        }
-        startgame = false;
-         */
-
-        /*
         //moving throughout the game
         for (int i = 0; i < 15; i++){
         if(gameKeyboard == ("y") && gameKeyboard == ("e")){
@@ -205,12 +160,13 @@ public class game
         }
 
         //main game
-        while (game == true){
+        while (game){
             //move numbers/the amount of times you can move between the rooms
-
+            room1 = true;
             //entering rooms code
             //moving to room 1
             if(room2 == true && gameKeyboard.equals ("s")){
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
                 room1 = true;
                 room2 = false;
             }
@@ -331,7 +287,6 @@ public class game
         }catch(){}
         }
         if(gameKeyboard.equals("w")){
-
         }
          */
 
