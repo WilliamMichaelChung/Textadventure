@@ -11,6 +11,9 @@ public class game
     boolean item1 = false;
     boolean item2 = false; 
     boolean item3 = false; 
+    int numberOfMoves = 15;//The amount of moves the player is given. If used up they lose
+    boolean game;
+    boolean startgame;
     boolean room1 = false;
     boolean room2 = false;
     boolean room3 = false;
@@ -20,20 +23,7 @@ public class game
     boolean room7 = false;
     boolean room8 = false;
     boolean exit = false;
-    int numberOfMoves = 15;//The amount of moves the player is given. If used up they lose
-    boolean game;
-    boolean startgame;
-    /**
-    boolean intro(){
-    Scanner inputStream = new Scanner(System.in);//creates a new scanner
-    String keyboard = inputStream.nextLine(); //the scanner reads the line below what it typed/the user input
-    keyboard = keyboard.toLowerCase();//turns whatever is typed into a lowercase
-    while(!keyboard.equals("y")){
-    System.out.print("Type Y to start");
-    }
-    return game = true;    
-    }
-     */
+    //String[] rooms = {"room1", "room2", "room3", "room4", "room5", "room6", "room7", "room8", "exit"};
     /**
      * Constructor for objects of class game
      */
@@ -70,99 +60,13 @@ public class game
                 System.out.print("Starting game");
             }
         }//if the user types y the intro will stop and move onto the game and if they don't it'll keep asking them to type y until they do
-        
-        /**
-        //moving throughout the game
-        for (int i = 0; i < 15; i++){
-        if(gameKeyboard == ("y") && gameKeyboard == ("e")){
-        room2 = true;
-        }
-        }//
-        //System.out.print("Press Y to start!");
-         */
-
-        ///.charAt(1);
-        //while (gamestart.equals("y")){
-
-        //startgame = false;
-        //System.out.print("Press Y to start!");
-
-        /*
-        if(startgame == true){
-        System.out.print("Welcome");
-        }
-        /**
-        if (gamestart.equals("y")){
-        startgame = true;
-        }
-        else{
-        startgame = false;
-        }
-        if(startgame == true){
-        System.out.print("Welcome");
-        }
-         */
-        /**
-        Scanner inputStream = new Scanner(System.in);
-        inputStream.nextLine();
-        //String input = inputStream.nextLine();
-        //String startgame = input.toLowerCase();
-        boolean  gameintro;
-        if(inputStream == "gameintro"){
-        gameintro = true;
-        }
-        else{
-        gameintro = false;
-        }
-         */
-
-        /*
-        if(keyboard.equals ("Y")){
-        readgamestart= true;
-        }
-
-        boolean readgamestart;
-        Scanner keyboard = new Scanner(System.in);
-        if (readgamestart == true){
-        String prompt = "Press Y to start!";
-        System.out.println(prompt);
-        while(!keyboard.hasNextLine()){
-        keyboard.nextLine();
-        System.out.print(prompt);
-        }
-        }
-        return keyboard.hasNextBoolean();
-         */
-        /**
-        char letter(){
-        while (startgame = true){
-        System.out.print("starting game!" + "\r\n" + "Welcome");
-        break;
-        }
-        }
-         */
-
-        /*
-        int readNum(){
-        Scanner keyboard = new Scanner(System.in);
-        String prompt = "give me a number";
-        System.out.println(prompt);
-        while(!keyboard.hasNextInt()){
-        keyboard.nextLine();
-        System.out.print("No "+prompt);
-        }
-        return keyboard.nextInt();
-        }
-         */
-        //the amount of times the player can move around the rooms before they lose
-        for(int i=0 ; i>15; i++){
-            System.out.println("Number of moves left"+ (i -= 15));
-        }
 
         //main game
-        while (game){
-            //move numbers/the amount of times you can move between the rooms
+        if (game){
             room1 = true;
+        }
+        while (game){
+
             //entering rooms code
             //moving to room 1
             if(room2 == true && gameKeyboard.equals ("s")){
@@ -216,79 +120,95 @@ public class game
                 room8 = true;
                 room7 = false;
             }
+
+            //rooms
+            if(room1){
+                System.out.println("1");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }
+            if(room1 && gameKeyboard.equals ("f")){
+                System.out.println("There is nothing in here");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }// if the user is in room 1 and inputs f to search the room they'll find nothing
+            //room 2 codedesription code + item and trap code
+            if(room2){
+                System.out.println("2");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }//if the user enter room2/if room 2 is true then print out a description of the room
+            if(room2 && gameKeyboard.equals ("f")){
+                System.out.println("You found item 1");
+                item1 = true;
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }// if the user is in room 2 and inputs f to search the room they'll find item 1 and make the item 1 boolean true
+
+            //room 3 code
+            if(room3){
+                System.out.println("3");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }//if the user enter room3/if room 3 is true then print out a description of the room
+            if(room3 && gameKeyboard.equals ("f")){
+                System.out.println("There is nothing in here");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }// if the user is in room 3 and inputs f to search the room they'll find nothing
+
+            //room 4 code
+            if(room4){
+                System.out.println("trap room. you fell to your death");
+                System.exit(0);
+            }//if the user enter room4/if room 4 is true then print out a description of the room
+
+            //room 5 code
+            if(room5){
+                System.out.println("5");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }//if the user enter room5/if room 5 is true then print out a description of the room
+            if(room5 && gameKeyboard.equals ("f")){
+                System.out.println("You found item 2");
+                item2 = true;
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }// if the user is in room 5 and inputs f to search the room they'll find item 2 and make the item 2 boolean true
+
+            //room 6 code
+            if(room6){
+                System.out.println("trap room. you fell to your death");
+                System.exit(0);
+            }//if the user enter room6/if room 6 is true then print out a description of the room
+
+            //room 7 code
+            if(room7){
+                System.out.println("7");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }//if the user enter room 7/if room 7 is true then print out a description of the room
+            if(room7 && gameKeyboard.equals ("f")){
+                System.out.println("You found item 3");
+                item3 = true;
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }// if the user is in room 7 and inputs f to search the room they'll find item 3 and make the item 3 boolean true
+
+            //room 8
+            if(room8){
+                System.out.println("8");
+                gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }//if the user enter room8/if room 8 is true then print out a description of the room
+            if(room8 && gameKeyboard.equals ("f") && item1 && item2 && item3){
+                System.out.println("Exit");
+                exit = true;
+            }// if the user is in room 8 and inputs f to search the room they'll stumble upon an exit
+            else{
+            System.out.println("You don't have all the items");    
+            gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }
+            /**
+            if(room8 && gameKeyboard.equals ("f")){
+            System.out.println("You don't have all the items");    
+            gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
+            }
+            */
+            //exit room
+            if(exit && item1 && item2 && item3){
+                System.out.println("You win!");
+                System.exit(0);
+            }//if exit, item1, item2 and item 3 have been found/are true then the user wins, the program prints out a win win message and the program ends
         }
-        //rooms
-        //room 2 codedesription code + item and trap code
-        if(room2 == true){
-            System.out.println("description of the room");
-        }//if the user enter room2/if room 2 is true then print out a description of the room
-        if(room2 == true && gameKeyboard.equals ("f")){
-            System.out.println("You found item 1");
-            item1 = true;
-        }// if the user is in room 2 and inputs f to search the room they'll find item 1 and make the item 1 boolean true
-
-        //room 3 code
-        if(room3 == true){
-            System.out.println("description of the room");
-        }//if the user enter room3/if room 3 is true then print out a description of the room
-        if(room3 == true && gameKeyboard.equals ("f")){
-            System.out.println("There is nothing in here");
-        }// if the user is in room 3 and inputs f to search the room they'll find nothing
-
-        //room 4 code
-        if(room4 == true){
-            System.out.println("trap room. you fell to your death");
-            System.exit(0);
-        }//if the user enter room4/if room 4 is true then print out a description of the room
-
-        //room 5 code
-        if(room5 == true){
-            System.out.println("description of the room");
-        }//if the user enter room5/if room 5 is true then print out a description of the room
-        if(room5 == true && gameKeyboard.equals ("f")){
-            System.out.println("You found item 2");
-            item2 = true;
-        }// if the user is in room 5 and inputs f to search the room they'll find item 2 and make the item 2 boolean true
-
-        //room 6 code
-        if(room6 == true){
-            System.out.println("trap room. you fell to your death");
-            System.exit(0);
-        }//if the user enter room6/if room 6 is true then print out a description of the room
-
-        //room 7 code
-        if(room7 == true){
-            System.out.println("description of the room");
-        }//if the user enter room 7/if room 7 is true then print out a description of the room
-        if(room7 == true && gameKeyboard.equals ("f")){
-            System.out.println("You found item 3");
-            item3 = true;
-        }// if the user is in room 7 and inputs f to search the room they'll find item 3 and make the item 3 boolean true
-
-        //room 8
-        if(room8 == true){
-            System.out.println("description of the room");
-        }//if the user enter room8/if room 8 is true then print out a description of the room
-        if(room8 == true && gameKeyboard.equals ("f")){
-            System.out.println("You found item 3");
-            exit = true;
-        }// if the user is in room 8 and inputs f to search the room they'll stumble upon an exit
-
-        //exit room
-        if(exit == true&& item1 && item2 && item3){
-            System.out.println("You win!");
-            System.exit(0);
-        }//if exit, item1, item2 and item 3 have been found/are true then the user wins, the program prints out a win win message and the program ends
-
-        /**
-        if(gameKeyboard.equals("e")){
-        try{
-
-        }catch(){}
-        }
-        if(gameKeyboard.equals("w")){
-        }
-         */
-
     }
 }
