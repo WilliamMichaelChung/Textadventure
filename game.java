@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class game here.
  *
@@ -43,8 +42,8 @@ public class game
         String line11 = "To move up type U in the responses box";
         String line12 = "To move down type D in the responses box";
         String line13 = "If you want to stop playing type end and the game will stop";
-        String line14 = "You have a limit of 15 moves to search and move throughout the rooms";
-        String Intro = line1 + "\r\n" + line2 + "\r\n" + line3 + "\r\n" + line10 + "\r\n" + line11 + "\r\n" + line12 + "\r\n" + line4 + "\r\n" + line5 + "\r\n" + line6 + "\r\n" + line7 + "\r\n" + line8 + "\r\n" + line9 + "\r\n" + line13 + "\r\n" + line14;//combines all the strings into 1 with each completed sentence going down a line
+        ///String line14 = "You have a limit of 15 moves to search and move throughout the rooms";
+        String Intro = line1 + "\r\n" + line2 + "\r\n" + line3 + "\r\n" + line10 + "\r\n" + line11 + "\r\n" + line12 + "\r\n" + line4 + "\r\n" + line5 + "\r\n" + line6 + "\r\n" + line7 + "\r\n" + line8 + "\r\n" + line9 + "\r\n" + line13 ;///+ "\r\n" + line14;//combines all the strings into 1 with each completed sentence going down a line
         System.out.println(Intro);//the system prints out the combined strings(intro)
 
         Scanner inputStream = new Scanner(System.in);//creates a new scanner
@@ -135,7 +134,7 @@ public class game
                     System.out.println("\r\n" + "room 1" + "\r\n" + "you can move north to room 2");
                     gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
                     //i++;
-                    System.out.print("\r\n" + "\r\n" + "Number of moves" + i);
+                    System.out.print("\r\n" + "Number of moves" + " " + i);
                 }
                 if(room1 && gameKeyboard.equals ("f")){
                     System.out.println("There is nothing in here");
@@ -149,7 +148,7 @@ public class game
                     System.out.println(r2 + "\r\n" + r3E + "\r\n" + r4U);
                     gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
                     //i++;
-                    System.out.print("\r\n" + "\r\n" + "Number of moves" + i);
+                    System.out.print("\r\n" + "\r\n" + "Number of moves" + "" + i);
                 }//if the user enter room2/if room 2 is true then print out a description of the room
                 if(room2 && gameKeyboard.equals ("f")){
                     System.out.println("\r\n" + "You found item 1");
@@ -264,12 +263,12 @@ public class game
                     //room8NoItems = false;
                     System.out.println("You win!");
 
-                    ///System.exit(0);
+                    System.exit(0);
                 }//if exit, item1, item2 and item 3 have been found/are true then the user wins, the program prints out a win win message and the program ends
 
                 //end game code
                 if (gameKeyboard.equals ("end")){
-                    System.out.print("ending game");
+                    System.out.print("\r\n" + "ending game");
                     System.exit(0);
                 }
             }
@@ -282,35 +281,59 @@ public class game
          */
     }
 
-    public static void endProgram(String[] args){
-        {
-            int randomNum = (int)(Math.random()*6);
-            /*
-            deathMessage("You died");
-            deathMessage("You fell to your death");
-            deathMessage("You were crushed to death"); 
-            deathMessage("You fell into a spike pit"); 
-            deathMessage("You got gunned down"); 
-            deathMessage("You suffocated");
-            */
-            /**
-            if(randomNum == 1){
-            System.out.print("You fell to your death");
-            }
-            if(randomNum == 2){
-            System.out.print("You were crushed to death");    
-            }
-            if(randomNum == 3){
-            System.out.print("You fell into a spike pit"); 
-            }
-            if(randomNum == 4){
-            System.out.print("You got gunned down");  
-            }
-            if(randomNum == 5){
-            System.out.print("You suffocated");
-            }
-             */
+    int endProgram(String[] args){
+        int randomNum = (int)(Math.random()*2);
+        if (randomNum == 2){
+            System.out.println("You died");  
         }
+        
+        if (randomNum == 2){
+            System.out.println("You fell to your death");  
+        }
+        
+        if (randomNum == 2){
+            System.out.println("You were crushed to death");  
+        }
+        
+        if (randomNum == 2){
+            System.out.println("You fell into a spike pit");  
+        }
+
+        if (randomNum == 2){
+            System.out.println("You got gunned down");  
+        }
+
+        return randomNum;   
     }
-}
+    /**
+    public static void endProgram(String[] args){
+    {
+    int randomNum = (int)(Math.random()*6);
+    /*
+    deathMessage("You died");
+    deathMessage("You fell to your death");
+    deathMessage("You were crushed to death"); 
+    deathMessage("You fell into a spike pit"); 
+    deathMessage("You got gunned down"); 
+    deathMessage("You suffocated");
+
+    if(randomNum == 1){
+    System.out.print("You fell to your death");
+    }
+    if(randomNum == 2){
+    System.out.print("You were crushed to death");    
+    }
+    if(randomNum == 3){
+    System.out.print("You fell into a spike pit"); 
+    }
+    if(randomNum == 4){
+    System.out.print("You got gunned down");  
+    }
+    if(randomNum == 5){
+    System.out.print("You suffocated");
+    }
+     */
+} 
+
+
 
