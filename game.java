@@ -4,8 +4,9 @@
  * @author (William Chung)
  * @version (16/5/23)
  */
+
 import java.util.Scanner;//imports a scanner so the program can read what the user types
-public class game
+public class game extends deathMessage
 {
     boolean item1 = false;
     boolean item2 = false; 
@@ -173,7 +174,7 @@ public class game
 
                 //room 4 code
                 if(room4){
-                    System.out.println("trap room. you fell to your death");
+                    randomNumber(); 
                     System.exit(0);
                 }//if the user enter room4/if room 4 is true then print out a description of the room
 
@@ -194,15 +195,7 @@ public class game
 
                 //room 6 code
                 if(room6){
-                    /*
-                    static void (String deathMessage){
-                    System.out.println(deathMessage);
-                    }
-                     */
-                    /**
-                    System.out.println("trap room. you fell to your death");
-                    System.exit(0);
-                     */
+                    randomNumber();  
                 }//if the user enter room6/if room 6 is true then print out a description of the room
 
                 //room 7 code
@@ -280,60 +273,6 @@ public class game
         }
          */
     }
-
-    int endProgram(String[] args){
-        int randomNum = (int)(Math.random()*2);
-        if (randomNum == 2){
-            System.out.println("You died");  
-        }
-        
-        if (randomNum == 2){
-            System.out.println("You fell to your death");  
-        }
-        
-        if (randomNum == 2){
-            System.out.println("You were crushed to death");  
-        }
-        
-        if (randomNum == 2){
-            System.out.println("You fell into a spike pit");  
-        }
-
-        if (randomNum == 2){
-            System.out.println("You got gunned down");  
-        }
-
-        return randomNum;   
-    }
-    /**
-    public static void endProgram(String[] args){
-    {
-    int randomNum = (int)(Math.random()*6);
-    /*
-    deathMessage("You died");
-    deathMessage("You fell to your death");
-    deathMessage("You were crushed to death"); 
-    deathMessage("You fell into a spike pit"); 
-    deathMessage("You got gunned down"); 
-    deathMessage("You suffocated");
-
-    if(randomNum == 1){
-    System.out.print("You fell to your death");
-    }
-    if(randomNum == 2){
-    System.out.print("You were crushed to death");    
-    }
-    if(randomNum == 3){
-    System.out.print("You fell into a spike pit"); 
-    }
-    if(randomNum == 4){
-    System.out.print("You got gunned down");  
-    }
-    if(randomNum == 5){
-    System.out.print("You suffocated");
-    }
-     */
-} 
-
+}
 
 
