@@ -6,7 +6,7 @@
  */
 
 import java.util.Scanner;//imports a scanner so the program can read what the user types
-public class game extends deathMessage
+public class game extends death
 {
     boolean item1 = false;
     boolean item2 = false; 
@@ -75,7 +75,18 @@ public class game extends deathMessage
         }
         while (game){
             for(int i = 0; i<numberOfMoves; i++){
-
+                if(gameKeyboard.equals ("i")){
+                    System.out.println("You have:");
+                }
+                if(gameKeyboard.equals ("i") && item1 == true){
+                    System.out.println("item 1");
+                }
+                if(gameKeyboard.equals ("i") && item2 == true){
+                    System.out.println("\r\n" + "item 2");
+                }
+                if(gameKeyboard.equals ("i") && item3 == true){
+                    System.out.println("\r\n" + "\r\n" + "item 3");
+                }
                 //entering rooms code
                 //moving to room 1
                 if(room2 == true && gameKeyboard.equals ("s")){
@@ -149,7 +160,7 @@ public class game extends deathMessage
                     System.out.println(r2 + "\r\n" + r3E + "\r\n" + r4U);
                     gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
                     //i++;
-                    System.out.print("\r\n" + "\r\n" + "Number of moves" + "" + i);
+                    System.out.print("\r\n" + "Number of moves" + "" + i);
                 }//if the user enter room2/if room 2 is true then print out a description of the room
                 if(room2 && gameKeyboard.equals ("f")){
                     System.out.println("\r\n" + "You found item 1");
@@ -165,7 +176,7 @@ public class game extends deathMessage
                     System.out.println("room 3" + "\r\n" + r2W + "\r\n" + r3U + "\r\n" + r7N);
                     gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
                     //i++;
-                    System.out.print("\r\n" + "\r\n" + "Number of moves" + i);
+                    System.out.print("\r\n" + "Number of moves" + i);
                 }//if the user enter room3/if room 3 is true then print out a description of the room
                 if(room3 && gameKeyboard.equals ("f")){
                     System.out.println("There is nothing in here");
@@ -174,7 +185,7 @@ public class game extends deathMessage
 
                 //room 4 code
                 if(room4){
-                    randomNumber(); 
+                    deathMessage(); 
                     System.exit(0);
                 }//if the user enter room4/if room 4 is true then print out a description of the room
 
@@ -185,7 +196,7 @@ public class game extends deathMessage
                     System.out.println("room 5" + "\r\n" + r3D + "\r\n" + r6U);
                     gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
                     //i++;
-                    System.out.print("\r\n" + "\r\n" + "Number of moves" + i);
+                    System.out.print("\r\n" + "Number of moves" + i);
                 }//if the user enter room5/if room 5 is true then print out a description of the room
                 if(room5 && gameKeyboard.equals ("f")){
                     System.out.println("You found item 2");
@@ -195,7 +206,7 @@ public class game extends deathMessage
 
                 //room 6 code
                 if(room6){
-                    randomNumber();  
+                    deathMessage();  
                 }//if the user enter room6/if room 6 is true then print out a description of the room
 
                 //room 7 code
@@ -205,7 +216,7 @@ public class game extends deathMessage
                     System.out.println("room 7" + "\r\n" + r8U + "\r\n" +r3S);
                     gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
                     //i++;
-                    System.out.print("\r\n" + "\r\n" + "Number of moves" + i);
+                    System.out.print("\r\n" + "Number of moves" + i);
                 }//if the user enter room 7/if room 7 is true then print out a description of the room
                 if(room7 && gameKeyboard.equals ("f")){
                     System.out.println("You found item 3");
@@ -219,7 +230,7 @@ public class game extends deathMessage
                     System.out.println("room 8" + "\r\n" + r7D);
                     gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
                     //i++;
-                    System.out.print("\r\n" + "\r\n" + "Number of moves" + i);
+                    System.out.print("\r\n" + "Number of moves" + i);
                 }//if the user enter room8/if room 8 is true then print out a description of the room
                 if(room8 && gameKeyboard.equals ("f") && item1 && item2 && item3){
                     System.out.println("Exit");
@@ -255,7 +266,6 @@ public class game extends deathMessage
                 if(exit && item1 && item2 && item3){
                     //room8NoItems = false;
                     System.out.println("You win!");
-
                     System.exit(0);
                 }//if exit, item1, item2 and item 3 have been found/are true then the user wins, the program prints out a win win message and the program ends
 
@@ -266,13 +276,6 @@ public class game extends deathMessage
                 }
             }
         }
-        /**
-        if(room8NoItems){
-        System.out.println("You don't have all the items");    
-        gameKeyboard = inputStream.nextLine().toLowerCase(); //the scanner reads the line below what it typed/the user input
-        }
-         */
     }
 }
-
 
